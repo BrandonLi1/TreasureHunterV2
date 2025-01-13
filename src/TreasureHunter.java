@@ -57,7 +57,7 @@ public class TreasureHunter {
             hunter.changeGold(122);
             hunter.buyItem("water", 2);
             hunter.buyItem("rope", 4);
-            hunter.buyItem("machete", 4);
+            hunter.buyItem("machete", 6);
             hunter.buyItem("horse", 12);
             hunter.buyItem("boat", 20);
         }
