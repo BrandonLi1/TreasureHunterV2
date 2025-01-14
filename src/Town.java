@@ -12,6 +12,7 @@ public class Town {
     private String printMessage;
     private boolean toughTown;
     public String treasure;
+    public static boolean easy;
 
     /**
      * The Town Constructor takes in a shop and the surrounding terrain, but leaves the hunter as null until one arrives.
@@ -97,6 +98,9 @@ public class Town {
         } else {
             noTroubleChance = 0.33;
         }
+        if (easy) {
+            noTroubleChance=.2;
+        }
         if (Math.random() > noTroubleChance) {
             printMessage = "You couldn't find any trouble";
         } else {
@@ -153,6 +157,9 @@ public class Town {
      */
     private boolean checkItemBreak() {
         double rand = Math.random();
+        if (easy) {
+          rand=1;
+        }
         return (rand < 0.5);
     }
 
