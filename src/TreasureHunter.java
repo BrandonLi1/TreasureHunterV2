@@ -124,7 +124,7 @@ public class TreasureHunter {
      * Takes the choice received from the menu and calls the appropriate method to carry out the instructions.
      * @param choice The action to process.
      */
-    private void processChoice(String choice) {
+    public void processChoice(String choice) {
         if (choice.equals("b") || choice.equals("s")) {
             currentTown.enterShop(choice);
         } else if (choice.equals("e")) {
@@ -137,6 +137,11 @@ public class TreasureHunter {
             }
         } else if (choice.equals("l")) {
             currentTown.lookForTrouble();
+            if (hunter.gold<=0) {
+                System.out.println(Colors.RED + "Game Over!" + Colors.RESET);
+                processChoice("x");
+                System.exit(0);
+            }
         } else if (choice.equals("x")) {
             System.out.println("Fare thee well, " + hunter.getHunterName() + "!");
         } else {
