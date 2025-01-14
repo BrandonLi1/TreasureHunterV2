@@ -125,18 +125,25 @@ public class Town {
     private Terrain getNewTerrain() {
         double rnd = (int)(Math.random() * 6 + 1);
         if (rnd == 1) {
+            TreasureHunter.canDig = true;
             return new Terrain("Mountains", "Rope");
         } else if (rnd == 2) {
+            TreasureHunter.canDig = true;
             return new Terrain("Ocean", "Boat");
         } else if (rnd == 3) {
+            TreasureHunter.canDig = true;
             return new Terrain("Plains", "Horse");
         } else if (rnd == 4) {
+            TreasureHunter.canDig = true;
             return new Terrain("Desert", "Water");
         } else if (rnd == 5){
+            TreasureHunter.canDig = true;
             return new Terrain("Jungle", "Machete");
         } else {
+            TreasureHunter.canDig = true;
             return new Terrain("Marsh", "boots");
         }
+
     }
 
     /**
