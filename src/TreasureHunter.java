@@ -17,6 +17,8 @@ public class TreasureHunter {
     private Hunter hunter;
     private boolean hardMode;
     private boolean easyMode;
+    public static boolean canDig = true;
+    private int temp;
 
     /**
      * Constructs the Treasure Hunter game.
@@ -49,7 +51,7 @@ public class TreasureHunter {
         // set hunter instance variable
         hunter = new Hunter(name, 20);
 
-        System.out.print("Hard mode? (y/n/e): ");
+        System.out.print("Hard mode? (y/n/test): ");
         String hard = SCANNER.nextLine().toLowerCase();
         if (hard.equals("y")) {
             hardMode = true;
@@ -123,6 +125,7 @@ public class TreasureHunter {
             System.out.println("(E)xplore surrounding terrain.");
             System.out.println("(M)ove on to a different town.");
             System.out.println("(L)ook for trouble!");
+            System.out.println("(D)ig for gold");
             System.out.println("(H)unt for treasure!");
             System.out.println("Give up the hunt and e(X)it.");
             System.out.println();
@@ -153,6 +156,24 @@ public class TreasureHunter {
                 System.out.println(Colors.RED + "Game Over!" + Colors.RESET);
                 processChoice("x");
                 System.exit(0);
+            }
+        } else if (choice.equals("d")) {
+            if(hunter.hasItemInKit("shovel")){
+                if(canDig){
+                    if((int) (Math.random() * 2) + 1 == 1){
+                        temp = (int)(Math.random()*20) + 1;
+                        System.out.println("you dug and found " + temp + " gold.");
+                        hunter.changeGold(temp);
+                        canDig = false;
+                    } else{
+                        System.out.println("you dug but only found dirt");
+                        canDig = false;
+                    }
+                } else {
+                    System.out.println("you cannot hunt for gold until you move to another town");
+                }
+            } else {
+                System.out.println("you need a shovel to dig up gold");
             }
         } else if (choice.equals("x")) {
             System.out.println("Fare thee well, " + hunter.getHunterName() + "!");
