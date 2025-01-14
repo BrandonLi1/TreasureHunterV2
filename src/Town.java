@@ -11,6 +11,7 @@ public class Town {
     private Terrain terrain;
     private String printMessage;
     private boolean toughTown;
+    public String treasure;
 
     /**
      * The Town Constructor takes in a shop and the surrounding terrain, but leaves the hunter as null until one arrives.
@@ -125,25 +126,30 @@ public class Town {
     private Terrain getNewTerrain() {
         double rnd = (int)(Math.random() * 6 + 1);
         if (rnd == 1) {
+            treasure();
             TreasureHunter.canDig = true;
             return new Terrain("Mountains", "Rope");
         } else if (rnd == 2) {
+            treasure();
             TreasureHunter.canDig = true;
             return new Terrain("Ocean", "Boat");
         } else if (rnd == 3) {
+            treasure();
             TreasureHunter.canDig = true;
             return new Terrain("Plains", "Horse");
         } else if (rnd == 4) {
+            treasure();
             TreasureHunter.canDig = true;
             return new Terrain("Desert", "Water");
         } else if (rnd == 5){
+            treasure();
             TreasureHunter.canDig = true;
             return new Terrain("Jungle", "Machete");
         } else {
+            treasure();
             TreasureHunter.canDig = true;
             return new Terrain("Marsh", "boots");
         }
-
     }
 
     /**
@@ -154,5 +160,18 @@ public class Town {
     private boolean checkItemBreak() {
         double rand = Math.random();
         return (rand < 0.5);
+    }
+
+    private void treasure() {
+        int x=(int)(Math.random()*7);
+        if (x==0) {
+            treasure="crown";
+        } else if (x==1) {
+            treasure="trophy";
+        } else if (x==2) {
+            treasure="gem";
+        } else {
+            treasure="dust";
+        }
     }
 }

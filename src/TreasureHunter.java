@@ -56,13 +56,13 @@ public class TreasureHunter {
             hardMode = true;
         }
         if (hard.equals("test")) {
-            hunter.changeGold(124);
-            hunter.buyItem("water", 2);
-            hunter.buyItem("rope", 4);
-            hunter.buyItem("machete", 6);
-            hunter.buyItem("horse", 12);
-            hunter.buyItem("boat", 20);
-            hunter.buyItem("boots",5);
+            hunter.changeGold(80);
+            hunter.addItem("water");
+            hunter.addItem("rope");
+            hunter.addItem("boots");
+            hunter.addItem("machete");
+            hunter.addItem("horse");
+            hunter.addItem("boat");
         }
     }
 
@@ -109,6 +109,7 @@ public class TreasureHunter {
             System.out.println(currentTown.getLatestNews());
             System.out.println("***");
             System.out.println(hunter.infoString());
+            System.out.println(hunter.treasureString());
             System.out.println(currentTown.infoString());
             System.out.println("(B)uy something at the shop.");
             System.out.println("(S)ell something at the shop.");
@@ -116,6 +117,7 @@ public class TreasureHunter {
             System.out.println("(M)ove on to a different town.");
             System.out.println("(L)ook for trouble!");
             System.out.println("(D)ig for gold");
+            System.out.println("(H)unt for treasure!");
             System.out.println("Give up the hunt and e(X)it.");
             System.out.println();
             System.out.print("What's your next move? ");
@@ -141,7 +143,7 @@ public class TreasureHunter {
             }
         } else if (choice.equals("l")) {
             currentTown.lookForTrouble();
-            if (hunter.gold <= 0) {
+            if (hunter.gold<=0) {
                 System.out.println(Colors.RED + "Game Over!" + Colors.RESET);
                 processChoice("x");
                 System.exit(0);
@@ -166,7 +168,24 @@ public class TreasureHunter {
             }
         } else if (choice.equals("x")) {
             System.out.println("Fare thee well, " + hunter.getHunterName() + "!");
-        } else {
+        } else if (choice.equals("h")) {
+            if (!hunter.hasTreasure(currentTown.treasure)&& !currentTown.treasure.equals("dust") && !currentTown.treasure.equals("")) {
+                hunter.addTreasure(currentTown.treasure);
+                System.out.println("You have found " + currentTown.treasure);
+                currentTown.treasure="";
+                if (hunter.hasTreasure("crown") && hunter.hasTreasure("trophy") && hunter.hasTreasure("gem")) {
+                    System.out.println("Congratulations, you have found the last of the three treasures, you win!");
+                }
+            } else if (currentTown.treasure.equals("dust")){
+                System.out.println("You found dust");
+                currentTown.treasure="";
+            } else if (currentTown.treasure.equals("")) {
+                System.out.println("You have already searched this town");
+            } else {
+                System.out.println("You already have " + currentTown.treasure);
+            }
+        }
+        else {
             System.out.println("Yikes! That's an invalid option! Try again.");
         }
     }
