@@ -1,3 +1,5 @@
+import java.awt.*;
+
 /**
  * Hunter Class<br /><br />
  * This class represents the treasure hunter character (the player) in the Treasure Hunt game.
@@ -8,7 +10,7 @@ public class Hunter {
     //instance variables
     private String hunterName;
     private String[] kit;
-    private int gold;
+    public int gold;
 
     /**
      * The base constructor of a Hunter assigns the name to the hunter and an empty kit.
@@ -35,7 +37,7 @@ public class Hunter {
     public void changeGold(int modifier) {
         gold += modifier;
         if (gold < 0) {
-            gold = 0;
+            gold=0;
         }
     }
 
