@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d02ae87f-38bb-47ac-83b8-f1a96f165625" name="Changes" comment="">
+    <list default="true" id="d02ae87f-38bb-47ac-83b8-f1a96f165625" name="Changes" comment="completed TH-4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Town.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Town.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TreasureHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TreasureHunter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,12 +29,12 @@
     &quot;assignee&quot;: &quot;Destinh2&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/BrandonLi1/TreasureHunterV2.git",
-    "accountId": "413760c4-2832-404b-89fb-8eeb6cac58f0"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/BrandonLi1/TreasureHunterV2.git&quot;,
+    &quot;accountId&quot;: &quot;413760c4-2832-404b-89fb-8eeb6cac58f0&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -63,6 +61,19 @@
       <option name="presentableId" value="Default" />
       <updated>1736524142360</updated>
     </task>
+    <task id="LOCAL-00001" summary="completed TH-4">
+      <option name="closed" value="true" />
+      <created>1736867433724</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1736867433724</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="completed TH-4" />
+    <option name="LAST_COMMIT_MESSAGE" value="completed TH-4" />
   </component>
 </project>
