@@ -185,6 +185,7 @@ public class TreasureHunter {
                 currentTown.treasure="";
                 if (hunter.hasTreasure("crown") && hunter.hasTreasure("trophy") && hunter.hasTreasure("gem")) {
                     System.out.println("Congratulations, you have found the last of the three treasures, you win!");
+                    System.exit(0);
                 }
             } else if (currentTown.treasure.equals("dust")){
                 System.out.println("You found dust");
