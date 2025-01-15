@@ -18,6 +18,7 @@ public class TreasureHunter {
     private boolean hardMode;
     private boolean easyMode;
     public static boolean canDig = true;
+    public static boolean samurai = false;
     private int temp;
 
     /**
@@ -68,6 +69,9 @@ public class TreasureHunter {
         if (hard.equals("e")) {
             easyMode=true;
             Town.easy=true;
+        }
+        if (hard.equals("s")){
+            samurai = true;
         }
     }
 

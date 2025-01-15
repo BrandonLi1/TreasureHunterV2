@@ -15,6 +15,9 @@ public class Shop {
     private static final int BOAT_COST = 20;
     private static final int BOOTS_COST = 5;
     private static final int SHOVEL_COST = 8;
+    private static final int SWORD_COST = 0;
+    public static boolean sword = false;
+    public static boolean shovel = false;
 
     // static variables
     private static final Scanner SCANNER = new Scanner(System.in);
@@ -89,7 +92,10 @@ public class Shop {
         str += "Horse: " + HORSE_COST + " gold\n";
         str += "Boat: " + BOAT_COST + " gold\n";
         str += "Boots: " + BOOTS_COST + " gold\n";
-        str += "Shovel" + SHOVEL_COST + " gold\n";
+        str += "Shovel: " + SHOVEL_COST + " gold\n";
+        if(TreasureHunter.samurai){
+            str += "Sword: " + SWORD_COST + " gold\n";
+        }
         return str;
     }
 
@@ -100,10 +106,15 @@ public class Shop {
      */
     public void buyItem(String item) {
         int costOfItem = checkMarketPrice(item, true);
-        if (customer.buyItem(item, costOfItem)) {
-            System.out.println("Ye' got yerself a " + item + ". Come again soon.");
+        if (TreasureHunter.samurai) {
+           customer.addItem(item);
+            System.out.println("I'm sorry I didn't know you were an esteemed samurai heres your " + item + ". Come again soon.");
         } else {
-            System.out.println("Hmm, either you don't have enough gold or you've already got one of those!");
+            if (customer.buyItem(item, costOfItem)) {
+                System.out.println("Ye' got yerself a " + item + ". Come again soon.");
+            } else {
+                System.out.println("Hmm, either you don't have enough gold or you've already got one of those!");
+            }
         }
     }
 
@@ -156,7 +167,11 @@ public class Shop {
         } else if (item.equals("boots")) {
             return BOOTS_COST;
         } else if (item.equals("shovel")) {
+            shovel = true;
             return SHOVEL_COST;
+        } else if (item.equals("sword")) {
+            sword = true;
+            return SWORD_COST;
         } else {
             return 0;
         }
