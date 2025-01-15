@@ -13,6 +13,9 @@ public class Town {
     private boolean toughTown;
     public String treasure;
     public static boolean easy;
+    public static boolean fightWin;
+    public static boolean fought=false;
+    public static int count=0;
 
     /**
      * The Town Constructor takes in a shop and the surrounding terrain, but leaves the hunter as null until one arrives.
@@ -38,6 +41,13 @@ public class Town {
     }
 
     public String getLatestNews() {
+        if (fightWin&&fought&&count>1) {
+            printMessage="You won a brawl";
+        }
+        if (!fightWin&fought&&count>1) {
+            printMessage="You lost a brawl";
+        }
+        count++;
         return printMessage;
     }
 
@@ -101,24 +111,33 @@ public class Town {
         if (easy) {
             noTroubleChance=.2;
         }
+        fought=false;
+        count=0;
         if (Math.random() > noTroubleChance) {
             printMessage = "You couldn't find any trouble";
+            fought=false;
+            count=0;
         } else {
+            fought=true;
+            count++;
             printMessage = Colors.RED + "You want trouble, stranger!  You got it!\nOof! Umph! Ow!\n" + Colors.RESET;
             int goldDiff = (int) (Math.random() * 10) + 1;
             if (shop.sword){
                 printMessage += "What you're a samurai? I am terribly sorry. Here, take my gold as payment.";
                 printMessage += "\nYou won the brawl and receive " + Colors.YELLOW + goldDiff + " gold." + Colors.RESET;
+                fightWin=true;
                 hunter.changeGold(goldDiff);
             } else {
                 if (Math.random() > noTroubleChance) {
                     printMessage += "Okay, stranger! You proved yer mettle. Here, take my gold.";
                     printMessage += "\nYou won the brawl and receive " + Colors.YELLOW + goldDiff + " gold." + Colors.RESET;
+                    fightWin=true;
                     hunter.changeGold(goldDiff);
                 } else {
                     printMessage += "That'll teach you to go lookin' fer trouble in MY town! Now pay up!";
                     printMessage += "\nYou lost the brawl and pay " + goldDiff + " gold.";
                     hunter.changeGold(-goldDiff);
+                    fightWin=false;
                 }
             }
         }
@@ -135,6 +154,8 @@ public class Town {
      */
     private Terrain getNewTerrain() {
         double rnd = (int)(Math.random() * 6 + 1);
+        fought=false;
+        count=0;
         if (rnd == 1) {
             treasure();
             TreasureHunter.canDig = true;

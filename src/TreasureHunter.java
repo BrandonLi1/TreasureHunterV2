@@ -52,7 +52,7 @@ public class TreasureHunter {
         // set hunter instance variable
         hunter = new Hunter(name, 20);
 
-        System.out.print("Hard mode? (y/n/test): ");
+        System.out.print("Hard mode? (y/n/e): ");
         String hard = SCANNER.nextLine().toLowerCase();
         if (hard.equals("y")) {
             hardMode = true;
@@ -151,6 +151,8 @@ public class TreasureHunter {
             System.out.println(currentTown.getTerrain().infoString());
         } else if (choice.equals("m")) {
             if (currentTown.leaveTown()) {
+                Town.count=0;
+                Town.fought=false;
                 // This town is going away so print its news ahead of time.
                 System.out.println(currentTown.getLatestNews());
                 enterTown();
