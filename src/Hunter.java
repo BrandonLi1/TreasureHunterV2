@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.Color;
 
 /**
  * Hunter Class<br /><br />
@@ -176,9 +177,9 @@ public class Hunter {
      * @return A string representation of the hunter.
      */
     public String infoString() {
-        String str = hunterName + " has " +Colors.YELLOW+ gold + " gold" + Colors.RESET;
+        String str = hunterName + " has " + gold + " gold";
         if (!kitIsEmpty()) {
-            str += " and " + Colors.PURPLE +  getInventory() + Colors.RESET ;
+            str += " and " +  getInventory()  ;
         }
         return str;
     }
@@ -186,7 +187,7 @@ public class Hunter {
     public String treasureString() {
         String str="Treasures found:";
         if (!treasureEmpty()) {
-            str += " " + Colors.PURPLE +  getTreasures() + Colors.RESET ;
+            str += " " +   getTreasures() ;
         } else {
             str+=" none";
         }

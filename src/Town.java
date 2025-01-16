@@ -1,3 +1,4 @@
+import java.awt.Color;
 /**
  * The Town Class is where it all happens.
  * The Town is designed to manage all the things a Hunter can do in town.
@@ -144,7 +145,7 @@ public class Town {
     }
 
     public String infoString() {
-        return "This nice little town is surrounded by " + Colors.CYAN + terrain.getTerrainName() + Colors.RESET + ".";
+        return "This nice little town is surrounded by " + terrain.getTerrainName() + ".";
     }
 
     /**
@@ -186,7 +187,7 @@ public class Town {
     /**
      * Determines whether a used item has broken.
      *
-     * @return true if the item broke.
+     * @return true if the item broke   .
      */
     private boolean checkItemBreak() {
         double rand = Math.random();

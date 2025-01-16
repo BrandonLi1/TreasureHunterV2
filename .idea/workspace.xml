@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d02ae87f-38bb-47ac-83b8-f1a96f165625" name="Changes" comment="Completed Th-10">
+    <list default="true" id="d02ae87f-38bb-47ac-83b8-f1a96f165625" name="Changes" comment="Fixed the errors in peer review">
+      <change afterPath="$PROJECT_DIR$/src/OutputWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Colors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Colors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Hunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hunter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Terrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Terrain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Town.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Town.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TreasureHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TreasureHunter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,12 +35,12 @@
     &quot;assignee&quot;: &quot;Destinh2&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/BrandonLi1/TreasureHunterV2.git&quot;,
-    &quot;accountId&quot;: &quot;8aadf1df-a6f0-4f14-a21b-9f95c9b8b40a&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/BrandonLi1/TreasureHunterV2.git",
+    "accountId": "9e45a1ee-13cb-4bda-b129-c9d28aea1d51"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -54,6 +58,11 @@
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\BT_1N3_08\IdeaProjects\TreasureHunterV2\src" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="TreasureHunterRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TreasureHunterRunner" />
@@ -85,12 +94,21 @@
       <option name="project" value="LOCAL" />
       <updated>1736952751337</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed the errors in peer review">
+      <option name="closed" value="true" />
+      <created>1737040822695</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1737040822695</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Completed Th-10" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed Th-10" />
+    <MESSAGE value="Fixed the errors in peer review" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the errors in peer review" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
