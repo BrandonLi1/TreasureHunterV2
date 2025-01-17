@@ -21,6 +21,7 @@ public class TreasureHunter {
     private boolean easyMode;
     public static boolean canDig = true;
     public static boolean samurai = false;
+    public static boolean sword = false;
     private int temp;
 
     /**

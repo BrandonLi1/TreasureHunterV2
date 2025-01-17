@@ -108,8 +108,19 @@ public class Shop {
     public void buyItem(String item) {
         int costOfItem = checkMarketPrice(item, true);
         if (TreasureHunter.samurai) {
-           customer.addItem(item);
-            TreasureHunter.window.addTextToWindow("I'm sorry I didn't know you were an esteemed samurai heres your " + item + ". Come again soon.\n", Color.black);
+            if (item.equals("sword")) {
+                sword=true;
+            }
+            if (TreasureHunter.sword) {
+                customer.addItem(item);
+                TreasureHunter.window.addTextToWindow("I'm sorry I didn't know you were an esteemed samurai heres your " + item + ". Come again soon.\n", Color.black);
+            } else {
+                if (customer.buyItem(item, costOfItem)) {
+                    TreasureHunter.window.addTextToWindow("Ye' got yerself a " + item + ". Come again soon.\n", Color.black);
+                } else {
+                    TreasureHunter.window.addTextToWindow("Hmm, either you don't have enough gold or you've already got one of those!\n", Color.black);
+                }
+            }
         } else {
             if (customer.buyItem(item, costOfItem)) {
                 TreasureHunter.window.addTextToWindow("Ye' got yerself a " + item + ". Come again soon.\n", Color.black);
